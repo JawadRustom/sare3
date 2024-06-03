@@ -1,0 +1,39 @@
+name: Banner
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/banners
+    metadata:
+      groupName: Banner
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":6,"image":"http:\/\/127.0.0.1:8000\/storage\/sit"},{"id":7,"image":"http:\/\/127.0.0.1:8000\/storage\/officia"}]}'
+        headers: []
+        description: 'Get all banners'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

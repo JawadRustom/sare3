@@ -1,0 +1,39 @@
+name: Brand
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/brands
+    metadata:
+      groupName: Brand
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":11,"image":"dolorem","name":"Caroline Glover","address":"Tempore voluptatem sequi voluptates. Veniam et eum officiis nulla. Excepturi inventore ut molestias impedit tenetur nulla. Repellendus id sint amet officia.","telephone":"earum","phone":"501.385.2898","description":"Doloremque qui hic cumque quasi molestias dicta rem. Beatae dolore quasi sit aliquid.","categories":[],"products":[]},{"id":12,"image":"vel","name":"Tatyana Boyer","address":"Molestiae deleniti impedit esse accusantium. Alias nesciunt blanditiis dolor quasi. Vel totam cumque aut nostrum modi est totam.","telephone":"aperiam","phone":"386-229-8613","description":"Itaque nisi dolorem aut exercitationem dolore sit. Cum laboriosam vitae ex odio deserunt. Enim ea accusantium atque. Beatae placeat est velit.","categories":[],"products":[]}]}'
+        headers: []
+        description: 'Get all brands'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

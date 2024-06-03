@@ -1,0 +1,1030 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+paths:
+  /api/login:
+    post:
+      summary: ''
+      operationId: postApiLogin
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'if email and password is correct'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  token: 1|dsakpodkaspokdopask
+                properties:
+                  token:
+                    type: string
+                    example: 1|dsakpodkaspokdopask
+        400:
+          description: 'if email and password is incorrect'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Email or password is wrong'
+                properties:
+                  message:
+                    type: string
+                    example: 'Email or password is wrong'
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: yshields@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: 'yuItz`#\<Rey['
+              required:
+                - email
+                - password
+      security: []
+  /api/register:
+    post:
+      summary: ''
+      operationId: postApiRegister
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  token: 1|dsakpodkaspokdopask
+                properties:
+                  token:
+                    type: string
+                    example: 1|dsakpodkaspokdopask
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: dolorum
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: jennyfer14@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: 'H}QM5(2`m(]c3tmj'
+                phone:
+                  type: string
+                  description: ''
+                  example: fugit
+              required:
+                - name
+                - email
+                - password
+                - phone
+      security: []
+  /api/logout:
+    post:
+      summary: ''
+      operationId: postApiLogout
+      description: ''
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - Authentication
+  /api/banners:
+    get:
+      summary: ''
+      operationId: getApiBanners
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'Get all banners'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 6
+                      image: 'http://127.0.0.1:8000/storage/sit'
+                    -
+                      id: 7
+                      image: 'http://127.0.0.1:8000/storage/officia'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 6
+                        image: 'http://127.0.0.1:8000/storage/sit'
+                      -
+                        id: 7
+                        image: 'http://127.0.0.1:8000/storage/officia'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 6
+                        image:
+                          type: string
+                          example: 'http://127.0.0.1:8000/storage/sit'
+      tags:
+        - Banner
+      security: []
+  /api/brands:
+    get:
+      summary: ''
+      operationId: getApiBrands
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'Get all brands'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 11
+                      image: dolorem
+                      name: 'Caroline Glover'
+                      address: 'Tempore voluptatem sequi voluptates. Veniam et eum officiis nulla. Excepturi inventore ut molestias impedit tenetur nulla. Repellendus id sint amet officia.'
+                      telephone: earum
+                      phone: 501.385.2898
+                      description: 'Doloremque qui hic cumque quasi molestias dicta rem. Beatae dolore quasi sit aliquid.'
+                      categories: []
+                      products: []
+                    -
+                      id: 12
+                      image: vel
+                      name: 'Tatyana Boyer'
+                      address: 'Molestiae deleniti impedit esse accusantium. Alias nesciunt blanditiis dolor quasi. Vel totam cumque aut nostrum modi est totam.'
+                      telephone: aperiam
+                      phone: 386-229-8613
+                      description: 'Itaque nisi dolorem aut exercitationem dolore sit. Cum laboriosam vitae ex odio deserunt. Enim ea accusantium atque. Beatae placeat est velit.'
+                      categories: []
+                      products: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 11
+                        image: dolorem
+                        name: 'Caroline Glover'
+                        address: 'Tempore voluptatem sequi voluptates. Veniam et eum officiis nulla. Excepturi inventore ut molestias impedit tenetur nulla. Repellendus id sint amet officia.'
+                        telephone: earum
+                        phone: 501.385.2898
+                        description: 'Doloremque qui hic cumque quasi molestias dicta rem. Beatae dolore quasi sit aliquid.'
+                        categories: []
+                        products: []
+                      -
+                        id: 12
+                        image: vel
+                        name: 'Tatyana Boyer'
+                        address: 'Molestiae deleniti impedit esse accusantium. Alias nesciunt blanditiis dolor quasi. Vel totam cumque aut nostrum modi est totam.'
+                        telephone: aperiam
+                        phone: 386-229-8613
+                        description: 'Itaque nisi dolorem aut exercitationem dolore sit. Cum laboriosam vitae ex odio deserunt. Enim ea accusantium atque. Beatae placeat est velit.'
+                        categories: []
+                        products: []
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 11
+                        image:
+                          type: string
+                          example: dolorem
+                        name:
+                          type: string
+                          example: 'Caroline Glover'
+                        address:
+                          type: string
+                          example: 'Tempore voluptatem sequi voluptates. Veniam et eum officiis nulla. Excepturi inventore ut molestias impedit tenetur nulla. Repellendus id sint amet officia.'
+                        telephone:
+                          type: string
+                          example: earum
+                        phone:
+                          type: string
+                          example: 501.385.2898
+                        description:
+                          type: string
+                          example: 'Doloremque qui hic cumque quasi molestias dicta rem. Beatae dolore quasi sit aliquid.'
+                        categories:
+                          type: array
+                          example: []
+                        products:
+                          type: array
+                          example: []
+      tags:
+        - Brand
+      security: []
+  /api/carts:
+    get:
+      summary: ''
+      operationId: getApiCarts
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'Get all cart items of the logged in user'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      product:
+                        id: 6
+                        name: 'Stephania Funk'
+                        description: 'At voluptatem corrupti doloribus. Quos voluptatem qui autem doloribus velit velit nam consequatur. Veniam molestiae eligendi qui ut ut corporis. Id sed voluptatem ab tempora illo aut.'
+                        image: reiciendis
+                        regular_price: 3844961209
+                        sale_price: 3094587271
+                        on_sale: true
+                        discount_percentage: 7503739.38
+                        is_favorite_for_current_user: false
+                      quantity: 8433173102
+                    -
+                      id: 2
+                      product:
+                        id: 7
+                        name: 'Jerome Windler'
+                        description: 'Iste id tempora temporibus velit. Ullam consequatur sit et consequatur aut. Ea aut et iusto.'
+                        image: iusto
+                        regular_price: 7309328972
+                        sale_price: 192037467
+                        on_sale: true
+                        discount_percentage: 71172915.05
+                        is_favorite_for_current_user: false
+                      quantity: 4348139201
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        product:
+                          id: 6
+                          name: 'Stephania Funk'
+                          description: 'At voluptatem corrupti doloribus. Quos voluptatem qui autem doloribus velit velit nam consequatur. Veniam molestiae eligendi qui ut ut corporis. Id sed voluptatem ab tempora illo aut.'
+                          image: reiciendis
+                          regular_price: 3844961209
+                          sale_price: 3094587271
+                          on_sale: true
+                          discount_percentage: 7503739.38
+                          is_favorite_for_current_user: false
+                        quantity: 8433173102
+                      -
+                        id: 2
+                        product:
+                          id: 7
+                          name: 'Jerome Windler'
+                          description: 'Iste id tempora temporibus velit. Ullam consequatur sit et consequatur aut. Ea aut et iusto.'
+                          image: iusto
+                          regular_price: 7309328972
+                          sale_price: 192037467
+                          on_sale: true
+                          discount_percentage: 71172915.05
+                          is_favorite_for_current_user: false
+                        quantity: 4348139201
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        product:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 6
+                            name:
+                              type: string
+                              example: 'Stephania Funk'
+                            description:
+                              type: string
+                              example: 'At voluptatem corrupti doloribus. Quos voluptatem qui autem doloribus velit velit nam consequatur. Veniam molestiae eligendi qui ut ut corporis. Id sed voluptatem ab tempora illo aut.'
+                            image:
+                              type: string
+                              example: reiciendis
+                            regular_price:
+                              type: integer
+                              example: 3844961209
+                            sale_price:
+                              type: integer
+                              example: 3094587271
+                            on_sale:
+                              type: boolean
+                              example: true
+                            discount_percentage:
+                              type: number
+                              example: 7503739.38
+                            is_favorite_for_current_user:
+                              type: boolean
+                              example: false
+                        quantity:
+                          type: integer
+                          example: 8433173102
+      tags:
+        - Cart
+    post:
+      summary: ''
+      operationId: postApiCarts
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'create new cart item for the logged in user'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    product:
+                      id: 6
+                      name: 'Prof. Jarvis Legros'
+                      description: 'Ab quas ut provident perspiciatis quibusdam. Laborum quae explicabo veniam beatae cumque porro. Et cupiditate at sit repellendus accusantium occaecati.'
+                      image: odio
+                      regular_price: 4092627318
+                      sale_price: 8643504044
+                      on_sale: true
+                      discount_percentage: -45508767.26
+                      is_favorite_for_current_user: false
+                    quantity: 2273293124
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      product:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 6
+                          name:
+                            type: string
+                            example: 'Prof. Jarvis Legros'
+                          description:
+                            type: string
+                            example: 'Ab quas ut provident perspiciatis quibusdam. Laborum quae explicabo veniam beatae cumque porro. Et cupiditate at sit repellendus accusantium occaecati.'
+                          image:
+                            type: string
+                            example: odio
+                          regular_price:
+                            type: integer
+                            example: 4092627318
+                          sale_price:
+                            type: integer
+                            example: 8643504044
+                          on_sale:
+                            type: boolean
+                            example: true
+                          discount_percentage:
+                            type: number
+                            example: -45508767.26
+                          is_favorite_for_current_user:
+                            type: boolean
+                            example: false
+                      quantity:
+                        type: integer
+                        example: 2273293124
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: integer
+                  description: ''
+                  example: 6
+                quantity:
+                  type: number
+                  description: ''
+                  example: 48.30517
+              required:
+                - product_id
+                - quantity
+  '/api/carts/{id}':
+    put:
+      summary: ''
+      operationId: putApiCartsId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'update a cart item for the logged in user'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    product:
+                      id: 6
+                      name: 'Irwin Kreiger'
+                      description: 'Aut dignissimos incidunt qui minus sed. Est at ut qui eaque fugit sint asperiores. Voluptas magnam nulla a provident qui nulla sed.'
+                      image: debitis
+                      regular_price: 2981988821
+                      sale_price: 3212459298
+                      on_sale: true
+                      discount_percentage: -2304704.77
+                      is_favorite_for_current_user: false
+                    quantity: 3275958715
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      product:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 6
+                          name:
+                            type: string
+                            example: 'Irwin Kreiger'
+                          description:
+                            type: string
+                            example: 'Aut dignissimos incidunt qui minus sed. Est at ut qui eaque fugit sint asperiores. Voluptas magnam nulla a provident qui nulla sed.'
+                          image:
+                            type: string
+                            example: debitis
+                          regular_price:
+                            type: integer
+                            example: 2981988821
+                          sale_price:
+                            type: integer
+                            example: 3212459298
+                          on_sale:
+                            type: boolean
+                            example: true
+                          discount_percentage:
+                            type: number
+                            example: -2304704.77
+                          is_favorite_for_current_user:
+                            type: boolean
+                            example: false
+                      quantity:
+                        type: integer
+                        example: 3275958715
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: integer
+                  description: ''
+                  example: 11
+                quantity:
+                  type: number
+                  description: ''
+                  example: 4053.1341185
+              required:
+                - product_id
+                - quantity
+    delete:
+      summary: ''
+      operationId: deleteApiCartsId
+      description: ''
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - Cart
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the cart.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/categories:
+    get:
+      summary: ''
+      operationId: getApiCategories
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'Get all categories'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 6
+                      name: 'Abigail Lehner'
+                    -
+                      id: 7
+                      name: 'Trenton Gleichner'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 6
+                        name: 'Abigail Lehner'
+                      -
+                        id: 7
+                        name: 'Trenton Gleichner'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 6
+                        name:
+                          type: string
+                          example: 'Abigail Lehner'
+      tags:
+        - Category
+      security: []
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/orders:
+    get:
+      summary: ''
+      operationId: getApiOrders
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'Get all orders of the logged in user'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 6
+                      user_id: 12
+                      order_items: []
+                    -
+                      id: 7
+                      user_id: 13
+                      order_items: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 6
+                        user_id: 12
+                        order_items: []
+                      -
+                        id: 7
+                        user_id: 13
+                        order_items: []
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 6
+                        user_id:
+                          type: integer
+                          example: 12
+                        order_items:
+                          type: array
+                          example: []
+      tags:
+        - Order
+    post:
+      summary: ''
+      operationId: postApiOrders
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'create a new order for the logged in user'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 6
+                    user_id: 12
+                    order_items: []
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 6
+                      user_id:
+                        type: integer
+                        example: 12
+                      order_items:
+                        type: array
+                        example: []
+      tags:
+        - Order
+  /api/products:
+    get:
+      summary: ''
+      operationId: getApiProducts
+      description: ''
+      parameters:
+        -
+          in: query
+          name: search
+          description: 'the text that you want to search for'
+          example: test
+          required: false
+          schema:
+            type: string
+            description: 'the text that you want to search for'
+            example: test
+      responses:
+        200:
+          description: 'Get all products'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 6
+                      name: 'Tanner Ledner DDS'
+                      description: 'Voluptas incidunt rerum esse autem et aut. Cupiditate quod neque enim aut. Voluptatem illum ad voluptas aut. Sunt ut nemo sunt ducimus facilis consequuntur.'
+                      image: consequatur
+                      regular_price: 5924110056
+                      sale_price: 3977015621
+                      on_sale: true
+                      discount_percentage: 19470944.35
+                      is_favorite_for_current_user: false
+                    -
+                      id: 7
+                      name: 'Nova Greenfelder'
+                      description: 'Dolorem voluptas voluptas aspernatur tenetur possimus. Itaque aliquid earum nihil eos quia. Assumenda et id harum ut. Veritatis sint dolor qui beatae.'
+                      image: repellat
+                      regular_price: 9548450316
+                      sale_price: 4529429001
+                      on_sale: true
+                      discount_percentage: 50190213.15
+                      is_favorite_for_current_user: false
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 6
+                        name: 'Tanner Ledner DDS'
+                        description: 'Voluptas incidunt rerum esse autem et aut. Cupiditate quod neque enim aut. Voluptatem illum ad voluptas aut. Sunt ut nemo sunt ducimus facilis consequuntur.'
+                        image: consequatur
+                        regular_price: 5924110056
+                        sale_price: 3977015621
+                        on_sale: true
+                        discount_percentage: 19470944.35
+                        is_favorite_for_current_user: false
+                      -
+                        id: 7
+                        name: 'Nova Greenfelder'
+                        description: 'Dolorem voluptas voluptas aspernatur tenetur possimus. Itaque aliquid earum nihil eos quia. Assumenda et id harum ut. Veritatis sint dolor qui beatae.'
+                        image: repellat
+                        regular_price: 9548450316
+                        sale_price: 4529429001
+                        on_sale: true
+                        discount_percentage: 50190213.15
+                        is_favorite_for_current_user: false
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 6
+                        name:
+                          type: string
+                          example: 'Tanner Ledner DDS'
+                        description:
+                          type: string
+                          example: 'Voluptas incidunt rerum esse autem et aut. Cupiditate quod neque enim aut. Voluptatem illum ad voluptas aut. Sunt ut nemo sunt ducimus facilis consequuntur.'
+                        image:
+                          type: string
+                          example: consequatur
+                        regular_price:
+                          type: integer
+                          example: 5924110056
+                        sale_price:
+                          type: integer
+                          example: 3977015621
+                        on_sale:
+                          type: boolean
+                          example: true
+                        discount_percentage:
+                          type: number
+                          example: 19470944.35
+                        is_favorite_for_current_user:
+                          type: boolean
+                          example: false
+      tags:
+        - Product
+  '/api/products/{id}':
+    get:
+      summary: ''
+      operationId: getApiProductsId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'Get single product'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 6
+                    name: 'Herbert Langworth'
+                    description: 'Et magni iusto libero numquam officiis. Perferendis sed quae facilis ducimus inventore reprehenderit beatae.'
+                    image: dolorum
+                    regular_price: 1313728681
+                    sale_price: 2310446944
+                    on_sale: true
+                    discount_percentage: -9967182.63
+                    is_favorite_for_current_user: false
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 6
+                      name:
+                        type: string
+                        example: 'Herbert Langworth'
+                      description:
+                        type: string
+                        example: 'Et magni iusto libero numquam officiis. Perferendis sed quae facilis ducimus inventore reprehenderit beatae.'
+                      image:
+                        type: string
+                        example: dolorum
+                      regular_price:
+                        type: integer
+                        example: 1313728681
+                      sale_price:
+                        type: integer
+                        example: 2310446944
+                      on_sale:
+                        type: boolean
+                        example: true
+                      discount_percentage:
+                        type: number
+                        example: -9967182.63
+                      is_favorite_for_current_user:
+                        type: boolean
+                        example: false
+      tags:
+        - Product
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the product.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/products/favorites:
+    post:
+      summary: ''
+      operationId: postApiProductsFavorites
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: 'Get all favorite products for the current logged in user'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 6
+                      name: 'Randy Christiansen'
+                      description: 'Qui pariatur ex consequatur sit ut. Ipsum dicta incidunt nostrum fuga est et non. Distinctio voluptatibus commodi et qui impedit omnis aut odio.'
+                      image: aliquid
+                      regular_price: 2148884685
+                      sale_price: 5171462872
+                      on_sale: true
+                      discount_percentage: -30225781.87
+                      is_favorite_for_current_user: false
+                    -
+                      id: 7
+                      name: 'Lois Daniel I'
+                      description: 'Unde rem provident officia vitae. Numquam rerum iste reiciendis blanditiis. Quasi inventore fugit ut in impedit. Doloremque commodi et et maiores aliquam.'
+                      image: eligendi
+                      regular_price: 3754916323
+                      sale_price: 6316318430
+                      on_sale: true
+                      discount_percentage: -25614021.07
+                      is_favorite_for_current_user: false
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 6
+                        name: 'Randy Christiansen'
+                        description: 'Qui pariatur ex consequatur sit ut. Ipsum dicta incidunt nostrum fuga est et non. Distinctio voluptatibus commodi et qui impedit omnis aut odio.'
+                        image: aliquid
+                        regular_price: 2148884685
+                        sale_price: 5171462872
+                        on_sale: true
+                        discount_percentage: -30225781.87
+                        is_favorite_for_current_user: false
+                      -
+                        id: 7
+                        name: 'Lois Daniel I'
+                        description: 'Unde rem provident officia vitae. Numquam rerum iste reiciendis blanditiis. Quasi inventore fugit ut in impedit. Doloremque commodi et et maiores aliquam.'
+                        image: eligendi
+                        regular_price: 3754916323
+                        sale_price: 6316318430
+                        on_sale: true
+                        discount_percentage: -25614021.07
+                        is_favorite_for_current_user: false
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 6
+                        name:
+                          type: string
+                          example: 'Randy Christiansen'
+                        description:
+                          type: string
+                          example: 'Qui pariatur ex consequatur sit ut. Ipsum dicta incidunt nostrum fuga est et non. Distinctio voluptatibus commodi et qui impedit omnis aut odio.'
+                        image:
+                          type: string
+                          example: aliquid
+                        regular_price:
+                          type: integer
+                          example: 2148884685
+                        sale_price:
+                          type: integer
+                          example: 5171462872
+                        on_sale:
+                          type: boolean
+                          example: true
+                        discount_percentage:
+                          type: number
+                          example: -30225781.87
+                        is_favorite_for_current_user:
+                          type: boolean
+                          example: false
+      tags:
+        - Product
+  '/api/products/{product_id}/favorite':
+    post:
+      summary: ''
+      operationId: postApiProductsProduct_idFavorite
+      description: ''
+      parameters: []
+      responses:
+        204:
+          description: 'Mark a product as favorite product for logged in user'
+      tags:
+        - Product
+    parameters:
+      -
+        in: path
+        name: product_id
+        description: 'The ID of the product.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/products/{product_id}/unfavorite':
+    post:
+      summary: ''
+      operationId: postApiProductsProduct_idUnfavorite
+      description: ''
+      parameters: []
+      responses:
+        204:
+          description: 'Remove a product from favorite products for logged in user'
+      tags:
+        - Product
+    parameters:
+      -
+        in: path
+        name: product_id
+        description: 'The ID of the product.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Authentication
+    description: ''
+  -
+    name: Banner
+    description: ''
+  -
+    name: Brand
+    description: ''
+  -
+    name: Cart
+    description: ''
+  -
+    name: Category
+    description: ''
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: Order
+    description: ''
+  -
+    name: Product
+    description: ''

@@ -1,0 +1,742 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/127.0.0.1:8000"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "e57f2a94-3d73-4a8c-adc6-742b942092db",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "description": "",
+            "item": [
+                {
+                    "name": "POST api\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"yshields@example.com\",\"password\":\"yuItz`#\\\\<Rey[\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"token\":\"1|dsakpodkaspokdopask\"}",
+                            "name": "if email and password is correct"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\"message\":\"Email or password is wrong\"}",
+                            "name": "if email and password is incorrect"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"dolorum\",\"email\":\"jennyfer14@example.com\",\"password\":\"H}QM5(2`m(]c3tmj\",\"phone\":\"fugit\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"token\":\"1|dsakpodkaspokdopask\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 204,
+                            "body": "null",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Banner",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/banners",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/banners",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/banners"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":6,\"image\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/sit\"},{\"id\":7,\"image\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/officia\"}]}",
+                            "name": "Get all banners"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Brand",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/brands",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/brands",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/brands"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":11,\"image\":\"dolorem\",\"name\":\"Caroline Glover\",\"address\":\"Tempore voluptatem sequi voluptates. Veniam et eum officiis nulla. Excepturi inventore ut molestias impedit tenetur nulla. Repellendus id sint amet officia.\",\"telephone\":\"earum\",\"phone\":\"501.385.2898\",\"description\":\"Doloremque qui hic cumque quasi molestias dicta rem. Beatae dolore quasi sit aliquid.\",\"categories\":[],\"products\":[]},{\"id\":12,\"image\":\"vel\",\"name\":\"Tatyana Boyer\",\"address\":\"Molestiae deleniti impedit esse accusantium. Alias nesciunt blanditiis dolor quasi. Vel totam cumque aut nostrum modi est totam.\",\"telephone\":\"aperiam\",\"phone\":\"386-229-8613\",\"description\":\"Itaque nisi dolorem aut exercitationem dolore sit. Cum laboriosam vitae ex odio deserunt. Enim ea accusantium atque. Beatae placeat est velit.\",\"categories\":[],\"products\":[]}]}",
+                            "name": "Get all brands"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Cart",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/carts",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/carts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/carts"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"product\":{\"id\":6,\"name\":\"Stephania Funk\",\"description\":\"At voluptatem corrupti doloribus. Quos voluptatem qui autem doloribus velit velit nam consequatur. Veniam molestiae eligendi qui ut ut corporis. Id sed voluptatem ab tempora illo aut.\",\"image\":\"reiciendis\",\"regular_price\":3844961209,\"sale_price\":3094587271,\"on_sale\":true,\"discount_percentage\":7503739.38,\"is_favorite_for_current_user\":false},\"quantity\":8433173102},{\"id\":2,\"product\":{\"id\":7,\"name\":\"Jerome Windler\",\"description\":\"Iste id tempora temporibus velit. Ullam consequatur sit et consequatur aut. Ea aut et iusto.\",\"image\":\"iusto\",\"regular_price\":7309328972,\"sale_price\":192037467,\"on_sale\":true,\"discount_percentage\":71172915.05,\"is_favorite_for_current_user\":false},\"quantity\":4348139201}]}",
+                            "name": "Get all cart items of the logged in user"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/carts",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/carts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/carts"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"product_id\":6,\"quantity\":48.30517}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"product\":{\"id\":6,\"name\":\"Prof. Jarvis Legros\",\"description\":\"Ab quas ut provident perspiciatis quibusdam. Laborum quae explicabo veniam beatae cumque porro. Et cupiditate at sit repellendus accusantium occaecati.\",\"image\":\"odio\",\"regular_price\":4092627318,\"sale_price\":8643504044,\"on_sale\":true,\"discount_percentage\":-45508767.26,\"is_favorite_for_current_user\":false},\"quantity\":2273293124}}",
+                            "name": "create new cart item for the logged in user"
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT api\/carts\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/carts\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/carts\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "16",
+                                    "description": "The ID of the cart."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"product_id\":11,\"quantity\":4053.1341185}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"product\":{\"id\":6,\"name\":\"Irwin Kreiger\",\"description\":\"Aut dignissimos incidunt qui minus sed. Est at ut qui eaque fugit sint asperiores. Voluptas magnam nulla a provident qui nulla sed.\",\"image\":\"debitis\",\"regular_price\":2981988821,\"sale_price\":3212459298,\"on_sale\":true,\"discount_percentage\":-2304704.77,\"is_favorite_for_current_user\":false},\"quantity\":3275958715}}",
+                            "name": "update a cart item for the logged in user"
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api\/carts\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/carts\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/carts\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "12",
+                                    "description": "The ID of the cart."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 204,
+                            "body": "null",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Category",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/categories",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":6,\"name\":\"Abigail Lehner\"},{\"id\":7,\"name\":\"Trenton Gleichner\"}]}",
+                            "name": "Get all categories"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Order",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/orders",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":6,\"user_id\":12,\"order_items\":[]},{\"id\":7,\"user_id\":13,\"order_items\":[]}]}",
+                            "name": "Get all orders of the logged in user"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/orders",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":6,\"user_id\":12,\"order_items\":[]}}",
+                            "name": "create a new order for the logged in user"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/products",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products",
+                            "query": [
+                                {
+                                    "key": "search",
+                                    "value": "test",
+                                    "description": "the text that you want to search for",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/products?search=test"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":6,\"name\":\"Tanner Ledner DDS\",\"description\":\"Voluptas incidunt rerum esse autem et aut. Cupiditate quod neque enim aut. Voluptatem illum ad voluptas aut. Sunt ut nemo sunt ducimus facilis consequuntur.\",\"image\":\"consequatur\",\"regular_price\":5924110056,\"sale_price\":3977015621,\"on_sale\":true,\"discount_percentage\":19470944.35,\"is_favorite_for_current_user\":false},{\"id\":7,\"name\":\"Nova Greenfelder\",\"description\":\"Dolorem voluptas voluptas aspernatur tenetur possimus. Itaque aliquid earum nihil eos quia. Assumenda et id harum ut. Veritatis sint dolor qui beatae.\",\"image\":\"repellat\",\"regular_price\":9548450316,\"sale_price\":4529429001,\"on_sale\":true,\"discount_percentage\":50190213.15,\"is_favorite_for_current_user\":false}]}",
+                            "name": "Get all products"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/products\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":6,\"name\":\"Herbert Langworth\",\"description\":\"Et magni iusto libero numquam officiis. Perferendis sed quae facilis ducimus inventore reprehenderit beatae.\",\"image\":\"dolorum\",\"regular_price\":1313728681,\"sale_price\":2310446944,\"on_sale\":true,\"discount_percentage\":-9967182.63,\"is_favorite_for_current_user\":false}}",
+                            "name": "Get single product"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/products\/favorites",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/favorites",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/favorites"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":6,\"name\":\"Randy Christiansen\",\"description\":\"Qui pariatur ex consequatur sit ut. Ipsum dicta incidunt nostrum fuga est et non. Distinctio voluptatibus commodi et qui impedit omnis aut odio.\",\"image\":\"aliquid\",\"regular_price\":2148884685,\"sale_price\":5171462872,\"on_sale\":true,\"discount_percentage\":-30225781.87,\"is_favorite_for_current_user\":false},{\"id\":7,\"name\":\"Lois Daniel I\",\"description\":\"Unde rem provident officia vitae. Numquam rerum iste reiciendis blanditiis. Quasi inventore fugit ut in impedit. Doloremque commodi et et maiores aliquam.\",\"image\":\"eligendi\",\"regular_price\":3754916323,\"sale_price\":6316318430,\"on_sale\":true,\"discount_percentage\":-25614021.07,\"is_favorite_for_current_user\":false}]}",
+                            "name": "Get all favorite products for the current logged in user"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/products\/{product_id}\/favorite",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:product_id\/favorite",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:product_id\/favorite",
+                            "variable": [
+                                {
+                                    "id": "product_id",
+                                    "key": "product_id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 204,
+                            "body": "null",
+                            "name": "Mark a product as favorite product for logged in user"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/products\/{product_id}\/unfavorite",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:product_id\/unfavorite",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:product_id\/unfavorite",
+                            "variable": [
+                                {
+                                    "id": "product_id",
+                                    "key": "product_id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 204,
+                            "body": "null",
+                            "name": "Remove a product from favorite products for logged in user"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

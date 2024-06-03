@@ -1,0 +1,223 @@
+name: Product
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/products
+    metadata:
+      groupName: Product
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      search:
+        name: search
+        description: 'the text that you want to search for'
+        required: false
+        example: test
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      search: test
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":6,"name":"Tanner Ledner DDS","description":"Voluptas incidunt rerum esse autem et aut. Cupiditate quod neque enim aut. Voluptatem illum ad voluptas aut. Sunt ut nemo sunt ducimus facilis consequuntur.","image":"consequatur","regular_price":5924110056,"sale_price":3977015621,"on_sale":true,"discount_percentage":19470944.35,"is_favorite_for_current_user":false},{"id":7,"name":"Nova Greenfelder","description":"Dolorem voluptas voluptas aspernatur tenetur possimus. Itaque aliquid earum nihil eos quia. Assumenda et id harum ut. Veritatis sint dolor qui beatae.","image":"repellat","regular_price":9548450316,"sale_price":4529429001,"on_sale":true,"discount_percentage":50190213.15,"is_favorite_for_current_user":false}]}'
+        headers: []
+        description: 'Get all products'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/products/{id}'
+    metadata:
+      groupName: Product
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":6,"name":"Herbert Langworth","description":"Et magni iusto libero numquam officiis. Perferendis sed quae facilis ducimus inventore reprehenderit beatae.","image":"dolorum","regular_price":1313728681,"sale_price":2310446944,"on_sale":true,"discount_percentage":-9967182.63,"is_favorite_for_current_user":false}}'
+        headers: []
+        description: 'Get single product'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/products/favorites
+    metadata:
+      groupName: Product
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":6,"name":"Randy Christiansen","description":"Qui pariatur ex consequatur sit ut. Ipsum dicta incidunt nostrum fuga est et non. Distinctio voluptatibus commodi et qui impedit omnis aut odio.","image":"aliquid","regular_price":2148884685,"sale_price":5171462872,"on_sale":true,"discount_percentage":-30225781.87,"is_favorite_for_current_user":false},{"id":7,"name":"Lois Daniel I","description":"Unde rem provident officia vitae. Numquam rerum iste reiciendis blanditiis. Quasi inventore fugit ut in impedit. Doloremque commodi et et maiores aliquam.","image":"eligendi","regular_price":3754916323,"sale_price":6316318430,"on_sale":true,"discount_percentage":-25614021.07,"is_favorite_for_current_user":false}]}'
+        headers: []
+        description: 'Get all favorite products for the current logged in user'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/products/{product_id}/favorite'
+    metadata:
+      groupName: Product
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      product_id:
+        name: product_id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      product_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: 'null'
+        headers: []
+        description: 'Mark a product as favorite product for logged in user'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/products/{product_id}/unfavorite'
+    metadata:
+      groupName: Product
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      product_id:
+        name: product_id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      product_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: 'null'
+        headers: []
+        description: 'Remove a product from favorite products for logged in user'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
