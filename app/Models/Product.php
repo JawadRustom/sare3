@@ -64,7 +64,7 @@ class Product extends Model
     protected function discountPercentage(): Attribute
     {
         return Attribute::make(
-            get: fn() => ($this->sale_price / $this->regular_price) * 100,
+            get: fn() => (($this->regular_price - $this->sale_price) / $this->regular_price) * 100,
         );
     }
 

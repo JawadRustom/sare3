@@ -38,7 +38,6 @@ class CartController extends Controller
     public function store(CartStoreRequest $request): CartResource
     {
         $cart = auth()->user()->carts()->create($request->validated());
-
         return new CartResource($cart);
     }
 
